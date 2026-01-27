@@ -1,0 +1,209 @@
+/* ====== ESTILO GENERAL ====== */
+body {
+  font-family: Arial, sans-serif;
+  background: #050b1a;
+  color: #00d9ff;
+  text-align: center;
+  padding-top: 100px;
+  margin: 0;
+}
+
+/* ====== INPUTS Y BOTONES ====== */
+input, button {
+  padding: 10px;
+  width: 200px;
+  border-radius: 10px;
+  border: none;
+}
+
+button {
+  background: #00d9ff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ====== MENÚ ====== */
+.menu {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.menu button {
+  width: 260px;
+  padding: 15px;
+  font-size: 18px;
+  background: linear-gradient(135deg, #0077ff, #00d9ff);
+  color: black;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00d9ff;
+}
+
+/* ====== PERFIL ====== */
+.perfil {
+  margin-top: 30px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 25px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #00d9ff;
+}
+
+/* ====== BURBUJA FOTO ANIMADA ====== */
+.burbuja {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: rgba(0, 217, 255, 0.15);
+  box-shadow:
+    0 0 25px rgba(0, 217, 255, 0.6),
+    inset 0 0 20px rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: flotar 4s ease-in-out infinite;
+}
+
+.burbuja img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #00d9ff;
+}
+
+@keyframes flotar {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+}
+
+/* ====== SPINNER UBIGEO ====== */
+.cargando {
+  margin-top: 30px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #002855;
+  border-top: 6px solid #00d9ff;
+  border-radius: 50%;
+  animation: girar 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes girar {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ====== TRANSICIÓN LOGIN ====== */
+#transicion {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  color: #00d9ff;
+  font-size: 18px;
+}
+
+#videoCarga {
+  width: 320px;
+  max-width: 90%;
+}
+
+/* ====== TRANSICIONES UBIGEO Y SALIR ====== */
+#transicionUbigeo,
+#transicionSalir {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#transicionUbigeo video,
+#transicionSalir video {
+  width: 360px;
+  max-width: 90%;
+  height: auto;
+}
+
+/* ====== MENSAJES ====== */
+.mensaje-ubigeo,
+.mensaje-salir {
+  margin-top: 15px;
+  color: #00d9ff;
+  font-size: 16px;
+  text-align: center;
+  max-width: 80%;
+}
+/* TRANSICIÓN SALIR CON GRANIZO */
+#transicionSalir {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top, #0a1a2f, #000);
+  overflow: hidden;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* GRANIZO */
+.granizo {
+  position: absolute;
+  top: -10px;
+  width: 6px;
+  height: 12px;
+  background: #bdefff;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: caer linear infinite;
+}
+
+@keyframes caer {
+  to {
+    transform: translateY(110vh);
+  }
+}
+
+/* TEXTO */
+.mensaje-salir {
+  margin-bottom: 60px;
+  text-align: center;
+  color: #00d9ff;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 0 0 10px #00d9ff;
+}
