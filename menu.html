@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Menú Principal</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    if (localStorage.getItem("logueado") !== "true") {
+      window.location.href = "index.html";
+    }
+  </script>
+</head>
+<body>
+
+<h1>🏪 FRITZ SPORT HUANCAYO DARK</h1>
+
+<div class="menu">
+  <button onclick="irPerfil()">👤 PERFIL</button>
+  <button onclick="irUbigeo()">🌍 UBIGEO</button>
+  <button onclick="irSubir()">📤 SUBIR EXCEL</button>
+  <button onclick="salir()">🚪 SALIR</button>
+</div>
+
+<!-- 🔵 TRANSICIÓN UBIGEO -->
+<div id="transicionUbigeo" style="display:none;">
+  <video autoplay muted loop>
+    <source src="ubigeo.webm" type="video/webm">
+  </video>
+  <div class="mensaje-ubigeo">
+    No dejes cajas de zapatillas en los pasadizos<br>
+    sino me caeré por ti
+  </div>
+</div>
+
+<!-- 🔴 TRANSICIÓN SALIR -->
+<div id="transicionSalir" style="display:none;">
+  <div class="mensaje-salir">
+    LA LLUVIA NO NOS DETENDRÁ POR NADA<br>
+    PORQUE SOMOS EL NÚMERO 1
+  </div>
+</div>
+
+<script>
+function irPerfil() {
+  window.location.href = "perfil.html";
+}
+
+function irUbigeo() {
+  const t = document.getElementById("transicionUbigeo");
+  t.style.display = "flex";
+  document.body.style.overflow = "hidden";
+
+  setTimeout(() => {
+    window.location.href = "ubigeo.html";
+  }, 15000); // 15 segundos
+}
+
+function irSubir() {
+  window.location.href = "subir.html";
+}
+
+function salir() {
+  const t = document.getElementById("transicionSalir");
+  t.style.display = "flex";
+  document.body.style.overflow = "hidden";
+
+  // GRANIZO
+  for (let i = 0; i < 120; i++) {
+    const g = document.createElement("div");
+    g.className = "granizo";
+    g.style.left = Math.random() * 100 + "vw";
+    g.style.animationDuration = (1 + Math.random() * 2) + "s";
+    g.style.animationDelay = Math.random() * 2 + "s";
+    t.appendChild(g);
+  }
+
+  setTimeout(() => {
+    localStorage.removeItem("logueado");
+    window.location.href = "index.html";
+  }, 15000);
+}
+</script>
+
+</body>
+</html>

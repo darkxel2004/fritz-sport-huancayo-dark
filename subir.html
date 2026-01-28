@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Subir Inventario</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>📤 Subir archivo Excel</h1>
+
+  <input type="file" id="archivo" accept=".xlsx">
+  <br><br>
+  <button onclick="subir()">SUBIR</button>
+  <br><br>
+  <button onclick="volver()">REGRESAR</button>
+
+  <script>
+    function subir() {
+      alert("📄 Archivo listo para subir (siguiente paso)");
+    }
+
+    function volver() {
+      window.location.href = "menu.html";
+    }
+  </script>
+
+</body>
+</html>
