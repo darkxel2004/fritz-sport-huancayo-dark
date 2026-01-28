@@ -13,11 +13,11 @@
   <br><br>
   <input type="password" id="clave" placeholder="Contraseña">
   <br><br>
-  <button id="btnEntrar">ENTRAR</button>
+  <button onclick="iniciarSesion()">ENTRAR</button>
 
   <!-- TRANSICIÓN AGUJERO DE GUSANO -->
   <div id="transicion" style="display:none;">
-    <video id="videoCarga" autoplay muted>
+    <video id="videoCarga" autoplay muted playsinline>
       <source src="agujero.mp4" type="video/mp4">
       Tu navegador no soporta video
     </video>
@@ -27,4 +27,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
