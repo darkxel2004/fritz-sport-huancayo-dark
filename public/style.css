@@ -126,8 +126,15 @@ button {
 }
 
 #videoCarga {
-  width: 320px;
+  width: 300px;
   max-width: 90%;
+}
+
+body {
+  background: #050b1a;
+  color: #00d9ff;
+  font-family: Arial, sans-serif;
+  text-align: center;
 }
 
 /* ====== TRANSICIONES UBIGEO Y SALIR ====== */
